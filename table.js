@@ -78,15 +78,6 @@ function appendToTableType2(table,array0,array1,array2){
 	}
 }
 
-function appendBlankRow(table){
-	var dataRow = document.createElement('tr')
-	table.appendChild(dataRow)
-	
-	var col = document.createElement('td')
-	dataRow.appendChild(col)
-	col.colSpan = maxCol
-}
-
 function appendToTableType3(table,array1){
 	
 	var arrayLength = array1.length
@@ -98,15 +89,25 @@ function appendToTableType3(table,array1){
 		var col = document.createElement('td')
 		dataRow.appendChild(col)
 		col.innerHTML = array1[i]
+		col.colSpan = 2
 		
 		var col = document.createElement('td')
 		dataRow.appendChild(col)
 		var idString = "blank" + nRow
 		nRow++
 		col.setAttribute("id", idString);
-		col.colSpan = maxCol-1
+		col.colSpan = 2
 		col.className = "centerData"
 	}
+}
+
+function appendBlankRow(table){
+	var dataRow = document.createElement('tr')
+	table.appendChild(dataRow)
+	
+	var col = document.createElement('td')
+	dataRow.appendChild(col)
+	col.colSpan = maxCol
 }
 
 var section1Header = "Vessel Process Data"
@@ -143,6 +144,16 @@ appendHeader(dataSheet,section4Header)
 appendToTableType1(dataSheet,section4Specs,section4Units)
 appendBlankRow(dataSheet)
 
+var section5Header = "Materials for construction"
+var section5Specs = ["Corrosion allowance (shell)","Corrosion allowance (heads)","Insulation Hot and Cold"]
+var section5Units = ["mm","mm","mm"]
+
+appendHeader(dataSheet,section5Header)
+appendToTableType1(dataSheet,section5Specs,section5Units)
+
+var section6Specs = ["material for construction of shell","material for construction of demister pad"]
+appendToTableType3(dataSheet,section6Specs)
+
 document.getElementById('dataSheetTable').appendChild(dataSheet)
 
 document.getElementById('blank1').innerHTML="D13"//"D13"
@@ -155,8 +166,8 @@ document.getElementById('blank7').innerHTML="D20"//"D20"
 document.getElementById('blank8').innerHTML="D21"//"D21"
 document.getElementById('blank9').innerHTML="D22"//"D22"
 document.getElementById('blank10').innerHTML="D23"//"D23"
-document.getElementById('blank11').innerHTML="C26"//"C26"
-document.getElementById('blank12').innerHTML="C27"//"C27"
+document.getElementById('blank11').innerHTML="D26"//"D26"
+document.getElementById('blank12').innerHTML="D27"//"D27"
 document.getElementById('blank13').innerHTML="D29"//"D29"
 document.getElementById('blank14').innerHTML="D30"//"D30"
 document.getElementById('blank15').innerHTML="D31"//"D31"
@@ -164,3 +175,4 @@ document.getElementById('blank16').innerHTML="D32"//"D32"
 document.getElementById('blank17').innerHTML="D33"//"D33"
 document.getElementById('blank18').innerHTML="D34"//"D34"
 document.getElementById('blank19').innerHTML="D35"//"D35"
+document.getElementById('blank20').innerHTML="D36"//"D36"
