@@ -15,31 +15,28 @@ var section1Units = ["kg/h","kg/h"]
 var nRow = 1
 
 function appendToTableType1(table,array1,array2){
-	var dataRow = document.createElement('tr')
-	table.appendChild(dataRow)
 	
-	function appendRowRight(item,index){
+	var arrayLength = array1.length
+	
+	for (i=0;i<arrayLength;i++){
+		var dataRow = document.createElement('tr')
+		table.appendChild(dataRow)
+		
 		var col = document.createElement('td')
 		dataRow.appendChild(col)
-		col.innerHTML = item
-	}
-	
-	function appendRowLeft(item,index){
-		var col = document.createElement('td')
-		dataRow.appendChild(col)
-		col.innerHTML = item
+		col.innerHTML = array1[index]
 		col.colSpan = 2
+		
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		var idString = "blank" + nRow
+		nRow++
+		col.setAttribute("id", idString);
+		
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		col.innerHTML = array2[index]
 	}
-	
-	array1.forEach(appendRowLeft)
-	
-	var col = document.createElement('td')
-	dataRow.appendChild(col)
-	var idString = "blank" + nRow
-	nRow++
-	col.setAttribute("id", idString);
-	
-	array2.forEach(appendRowRight)
 }
 
 appendToTableType1(dataSheet,section1Names,section1Units)
