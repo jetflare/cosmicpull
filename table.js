@@ -9,36 +9,39 @@ dataSheetHeaderVPD.innerHTML = "Vessel Process Data"
 dataSheetHeaderVPD.colSpan = 4
 dataSheetHeader1.appendChild(dataSheetHeaderVPD)
 
-var section1NamesUnits = ["Total gas flow","kg/h","Total liquid flow","kg/h"]
+var section1Names = ["Total gas flow","Total liquid flow"]
+var section1Units = ["kg/h","kg/h"]
 
 var nRow = 1
 
-function appendToTableType1(item,index){
-	var dataRow
+function appendToTableType1(table,array1,array2){
+	var dataRow = document.createElement('tr')
+	table.appendChild(dataRow)
 	
-	if (index%2==0){
-		dataRow = document.createElement('tr')
-		dataSheet.appendChild(dataRow)
-		
-		var col1 = document.createElement('td')
-		dataRow.appendChild(col1)
-		col1.innerHTML = item
-		col1.colSpan = 2
-		
-		var col2 = document.createElement('td')
-		dataRow.appendChild(col2)
-		var idString = "blank" + nRow
-		nRow++
-		col2.setAttribute("id", idString);
-		
-		var col3 = document.createElement('td')
-		dataRow.appendChild(col3)
-		col3.innerHTML = this[index+1]
+	function appendRowRight(item,index){
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		col.innerHTML = item
 	}
+	
+	function appendRowLeft(item,index){
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		col.innerHTML = item
+		col.colSpan = 2
+	}
+	
+	array1.forEach(appendRowLeft)
+	
+	var col = document.createElement('td')
+	dataRow.appendChild(col)
+	var idString = "blank" + nRow
+	nRow++
+	col.setAttribute("id", idString);
+	
+	array2.forEach(appendRowRight)
 }
 
-var dataSheetSection1 = document.createElement('tr')
-dataSheet.appendChild(dataSheetHeader1)
+appendToTableType1(dataSheet,section1Names,section1Units)
 
-section1NamesUnits.forEach(appendToTableType1)
 document.getElementById('dataSheetTable').appendChild(dataSheet)
