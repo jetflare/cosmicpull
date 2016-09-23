@@ -109,10 +109,11 @@ function appendToTableType3(table,array1){
 	}
 }
 
+var section1Header = "Vessel Process Data"
 var section1Names = ["Total gas flow","Total liquid flow"]
 var section1Units = ["kg/h","kg/h"]
 
-appendHeader(dataSheet,"Vessel Process Data")
+appendHeader(dataSheet,section1Header)
 appendToTableType1(dataSheet,section1Names,section1Units)
 appendBlankRow(dataSheet)
 
@@ -123,14 +124,23 @@ var section2Units = ["°C","kPag","kg/m<sup>3</sup>","Ns/m<sup>2</sup>"]
 appendToTableType2(dataSheet,section2Phases,section2Properties,section2Units)
 appendBlankRow(dataSheet)
 
+var section3Header = "Construction & Materials"
 var section3Specs = ["Design code","Vessel classification"]
 var section3Data = ["Normal Pressure Range","Normal Temperature Range","Max Operating Temperature","Design pressure","Relief valve set pressure","Hydraulic test pressure","Minimum design temperature @ pressure","Design vacuum @ temp","Gas residence time","Liquid hold-up time"]
 var section3Units = ["kPag","°C","°C","kPag","kPag","kPag","°C","kPag","sec","min"]
 
-appendHeader(dataSheet,"Construction & Materials")
+appendHeader(dataSheet,section3Header)
 appendToTableType3(dataSheet,section3Specs)
 appendBlankRow(dataSheet)
 appendToTableType1(dataSheet,section3Data,section3Units)
+appendBlankRow(dataSheet)
+
+var section4Header = "Internals"
+var section4Specs = ["Demister pad thickness"]
+var section4Units = ["mm"]
+
+appendHeader(dataSheet,section4Header)
+appendToTableType1(dataSheet,section4Specs,section4Units)
 appendBlankRow(dataSheet)
 
 document.getElementById('dataSheetTable').appendChild(dataSheet)
@@ -145,3 +155,12 @@ document.getElementById('blank7').innerHTML="D20"//"D20"
 document.getElementById('blank8').innerHTML="D21"//"D21"
 document.getElementById('blank9').innerHTML="D22"//"D22"
 document.getElementById('blank10').innerHTML="D23"//"D23"
+document.getElementById('blank11').innerHTML="C26"//"C26"
+document.getElementById('blank12').innerHTML="C27"//"C27"
+document.getElementById('blank13').innerHTML="D29"//"D29"
+document.getElementById('blank14').innerHTML="D30"//"D30"
+document.getElementById('blank15').innerHTML="D31"//"D31"
+document.getElementById('blank16').innerHTML="D32"//"D32"
+document.getElementById('blank17').innerHTML="D33"//"D33"
+document.getElementById('blank18').innerHTML="D34"//"D34"
+document.getElementById('blank19').innerHTML="D35"//"D35"
