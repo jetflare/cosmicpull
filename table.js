@@ -42,3 +42,4 @@ var dataSheetSection1 = document.createElement('tr')
 dataSheet.appendChild(dataSheetHeader1)
 
 section1NamesUnits.forEach(appendToTableType1)
+document.getElementById('dataSheetTable').appendChild(dataSheet)
