@@ -87,6 +87,28 @@ function appendBlankRow(table){
 	col.colSpan = maxCol
 }
 
+function appendToTableType3(table,array1){
+	
+	var arrayLength = array1.length
+	
+	for (i=0;i<arrayLength;i++){
+		var dataRow = document.createElement('tr')
+		table.appendChild(dataRow)
+		
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		col.innerHTML = array1[i]
+		
+		var col = document.createElement('td')
+		dataRow.appendChild(col)
+		var idString = "blank" + nRow
+		nRow++
+		col.setAttribute("id", idString);
+		col.colSpan = maxCol-1
+		col.className = "centerData"
+	}
+}
+
 var section1Names = ["Total gas flow","Total liquid flow"]
 var section1Units = ["kg/h","kg/h"]
 
@@ -101,10 +123,13 @@ var section2Units = ["°C","kPag","kg/m<sup>3</sup>","Ns/m<sup>2</sup>"]
 appendToTableType2(dataSheet,section2Phases,section2Properties,section2Units)
 appendBlankRow(dataSheet)
 
+var section3Specs = ["Design code","Vessel classification"]
 var section3Data = ["Normal Pressure Range","Normal Temperature Range","Max Operating Temperature","Design pressure","Relief valve set pressure","Hydraulic test pressure","Minimum design temperature @ pressure","Design vacuum @ temp","Gas residence time","Liquid hold-up time"]
 var section3Units = ["kPag","°C","°C","kPag","kPag","kPag","°C","kPag","sec","min"]
 
 appendHeader(dataSheet,"Construction & Materials")
+appendToTableType3(dataSheet,section3Specs)
+appendBlankRow(dataSheet)
 appendToTableType1(dataSheet,section3Data,section3Units)
 appendBlankRow(dataSheet)
 
