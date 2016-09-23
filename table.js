@@ -1,15 +1,6 @@
 var dataSheet = document.createElement('table')
 
-var dataSheetHeader1 = document.createElement('tr')
-dataSheetHeader1.className = "tableHeader"
-dataSheet.appendChild(dataSheetHeader1)
-
 var maxCol = 4
-
-var dataSheetHeaderVPD = document.createElement('td')
-dataSheetHeaderVPD.innerHTML = "Vessel Process Data"
-dataSheetHeaderVPD.colSpan = maxCol
-dataSheetHeader1.appendChild(dataSheetHeaderVPD)
 
 var section1Names = ["Total gas flow","Total liquid flow"]
 var section1Units = ["kg/h","kg/h"]
@@ -19,6 +10,17 @@ var section2Properties = ["Operating temperature","Pressure","Density","Dynamic 
 var section2Units = ["°C","kPag","kg/m<sup>3</sup>","Ns/m<sup>2</sup>"]
 
 var nRow = 1
+
+function appendHeader(table,string){
+	var headerRow = document.createElement('tr')
+	headerRow.className = "tableHeader"
+	table.appendChild(headerRow)
+	
+	var headerRowText = document.createElement('td')
+	headerRowText.innerHTML = string
+	headerRowText.colSpan = maxCol
+	headerRow.appendChild(headerRowText)
+}
 
 function appendToTableType1(table,array1,array2){
 	
@@ -59,6 +61,7 @@ function appendToTableType2(table,array0,array1,array2){
 		dataRow.appendChild(col)
 		col.innerHTML = array0[i]
 		col.rowSpan = array2Length
+		col.className = "tableHeader"
 		
 		for (j=0;j<array2Length;j++){
 			if (j>0){
@@ -91,6 +94,7 @@ function appendBlankRow(table){
 	col.colSpan = maxCol
 }
 
+appendHeader(dataSheet,"Vessel Process Data")
 appendToTableType1(dataSheet,section1Names,section1Units)
 appendBlankRow(dataSheet)
 appendToTableType2(dataSheet,section2Phases,section2Properties,section2Units)
