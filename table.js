@@ -93,7 +93,7 @@ function appendBlankRow(table){
 
 appendToTableType1(dataSheet,section1Names,section1Units)
 appendBlankRow(dataSheet)
-appendToTableType2(dataSheet,section2Phases,section2Names,section2Units)
+appendToTableType2(dataSheet,section2Phases,section2Properties,section2Units)
 
 document.getElementById('dataSheetTable').appendChild(dataSheet)
 
