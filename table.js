@@ -16,7 +16,7 @@ var nRow = 1
 function appendToTableType1(item,index){
 	var dataRow
 	
-	//if (index%2==0){
+	if (index%2==0){
 		dataRow = document.createElement('tr')
 		dataSheet.appendChild(dataRow)
 		
@@ -31,11 +31,10 @@ function appendToTableType1(item,index){
 		nRow++
 		col2.setAttribute("id", idString);
 		
-	//} else {
 		var col3 = document.createElement('td')
 		dataRow.appendChild(col3)
 		col3.innerHTML = item
-	//}
+	}
 }
 
 var dataSheetSection1 = document.createElement('tr')
