@@ -42,3 +42,5 @@ function appendToTableType1(table,array1,array2){
 appendToTableType1(dataSheet,section1Names,section1Units)
 
 document.getElementById('dataSheetTable').appendChild(dataSheet)
+
+document.getElementById('blank1').innerHTML="D13"
