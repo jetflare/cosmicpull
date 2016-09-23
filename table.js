@@ -59,6 +59,7 @@ function appendToTableType2(table,array0,array1,array2){
 		dataRow.appendChild(col)
 		col.innerHTML = array0[i]
 		col.rowSpan = array2Length
+		col.className = "tableHeader"
 		
 		for (j=0;j<array2Length;j++){
 			if (j>0){
