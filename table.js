@@ -137,10 +137,12 @@ appendToTableType1(dataSheet,section3Data,section3Units)
 appendBlankRow(dataSheet)
 
 var section4Header = "Internals"
+var section4Type = ["Demister type"]
 var section4Specs = ["Demister pad thickness"]
 var section4Units = ["mm"]
 
 appendHeader(dataSheet,section4Header)
+appendToTableType3(dataSheet,section4Type)
 appendToTableType1(dataSheet,section4Specs,section4Units)
 appendBlankRow(dataSheet)
 
