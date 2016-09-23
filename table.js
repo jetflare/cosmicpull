@@ -24,7 +24,7 @@ function appendToTableType1(table,array1,array2){
 		
 		var col = document.createElement('td')
 		dataRow.appendChild(col)
-		col.innerHTML = array1[index]
+		col.innerHTML = array1[i]
 		col.colSpan = 2
 		
 		var col = document.createElement('td')
@@ -35,7 +35,7 @@ function appendToTableType1(table,array1,array2){
 		
 		var col = document.createElement('td')
 		dataRow.appendChild(col)
-		col.innerHTML = array2[index]
+		col.innerHTML = array2[i]
 	}
 }
 
