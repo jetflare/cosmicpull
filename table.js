@@ -33,7 +33,7 @@ function appendToTableType1(item,index){
 		
 		var col3 = document.createElement('td')
 		dataRow.appendChild(col3)
-		col3.innerHTML = item
+		col3.innerHTML = this[index+1]
 	}
 }
 
