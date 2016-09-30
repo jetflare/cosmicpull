@@ -1,6 +1,7 @@
+var line = document.createElement("p")
+document.getElementById("inputList").appendChild(line)
+
 function createInput(frontString,idString,value,backString){
-	var line = document.createElement("p")
-	document.getElementById("inputList").appendChild(line)
 	line.innerHTML = frontString + ": "
 	
 	var inputText = document.createElement("input")
@@ -10,8 +11,7 @@ function createInput(frontString,idString,value,backString){
 	inputText.setAttribute("value",value)
 	line.appendChild(inputText)
 	
-	line.innerHTML += " " + backString
-	line.style.marginTop = "0px"
+	line.innerHTML += " " + backString + "<br>"
 }
 
 createInput("Height, between tangent lines","height",50,"m")
