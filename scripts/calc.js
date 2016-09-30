@@ -62,6 +62,7 @@ var deadWeightStress = totalWeight/(Math.PI*maxThickness*(innerDiameter + maxThi
 
 var outerDiameter = innerDiameter + 2 * maxThickness
 var secondMomentOfArea = Math.PI/64*(Math.pow(outerDiameter,4) - Math.pow(innerDiameter,4))
+var bendingStress = bendingMoment/secondMomentOfArea*(innerDiameter/2+maxThickness)
 
 var result = document.createElement("p")
 
@@ -89,6 +90,7 @@ appendToResult("<br>Dead weight stress","σ<sub>w</sub>",deadWeightStress,"N/mm<
 
 appendToResult("<br>Outer diamter","D<sub>o</sub>",outerDiameter,"mm",1e3)
 appendToResult("Second moment of area of vessel","I<sub>v</sub>",secondMomentOfArea,"mm<sup>4</sup>",1e12)
+appendToResult("Bending stress","σ<sub>b</sub>",bendingStress,"N/mm<sup>2</sup> (plus minus)",1e-6)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
