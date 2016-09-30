@@ -87,8 +87,8 @@ appendToResult("Circumferential pressure stress","σ<sub>h</sub>",circPressStres
 
 appendToResult("<br>Dead weight stress","σ<sub>w</sub>",deadWeightStress,"N/mm<sup>2</sup> (compressive)",1e-6)
 
-appendToResult("<br>Outer diamter","D<sub>o</sub>",outerDiameter,"mm",1e-3)
-appendToResult("Second moment of area of vessel","I<sub>v</sub>",secondMomentOfArea,"mm<sup>4</sup>",1e-12)
+appendToResult("<br>Outer diamter","D<sub>o</sub>",outerDiameter,"mm",1e3)
+appendToResult("Second moment of area of vessel","I<sub>v</sub>",secondMomentOfArea,"mm<sup>4</sup>",1e12)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
