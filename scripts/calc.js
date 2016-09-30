@@ -58,6 +58,11 @@ var maxThickness = document.getElementById("maxThick").value * 1e-3
 var circPressStress = designPressure*innerDiameter/(2*maxThickness)
 var longPressStress = circPressStress/2
 
+var deadWeightStress = totalWeight/(Math.PI*maxThickness*(innerDiameter + thickness))
+
+var outerDiameter = innerDiameter + 2 * maxThickness
+var secondMomentOfArea = Math.PI/64*(Math.pow(outerDiameter,4)+Math.pow(innerDiameter,4))
+
 var result = document.createElement("p")
 
 function appendToResult(string,shortString,whatever,unit,modifier){
@@ -79,6 +84,11 @@ appendToResult("<br>Bending moment at bottom tangent line","M<sub>x</sub>",bendi
 
 appendToResult("<br>Longitudinal pressure stress","σ<sub>L</sub>",longPressStress,"N/mm<sup>2</sup>",1e-6)
 appendToResult("Circumferential pressure stress","σ<sub>h</sub>",circPressStress,"N/mm<sup>2</sup>",1e-6)
+
+appendToResult("<br>Dead weight stress","σ<sub>w</sub>",deadWeightStress,"N/mm<sup>2</sup> (compressive)",1e-6)
+
+appendToResult("<br>Outer diamter","D<sub>o</sub>",outerDiameter,"mm",1e-3)
+appendToResult("Second moment of area of vessel","I<sub>v</sub>",secondMomentOfArea,"mm<sup>4</sup>",1e-12)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
