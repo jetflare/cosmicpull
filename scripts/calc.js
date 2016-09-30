@@ -67,6 +67,8 @@ var bendingStress = bendingMoment/secondMomentOfArea*(innerDiameter/2+maxThickne
 var upwindLongStress = longPressStress - deadWeightStress + bendingStress
 var downwindLongStress = longPressStress - deadWeightStress - bendingStress
 
+var critBuckleStress = 2e4*maxThickness/outerDiameter*1e6
+
 var result = document.createElement("p")
 
 function appendToResult(string,shortString,whatever,unit,modifier){
@@ -96,7 +98,9 @@ appendToResult("Second moment of area of vessel","I<sub>v</sub>",secondMomentOfA
 appendToResult("Bending stress","σ<sub>b</sub>",bendingStress,"N/mm<sup>2</sup> (plus minus)",1e-6)
 
 appendToResult("<br>Upwind longitudinal stress","σ<sub>z</sub> (upwind)",upwindLongStress,"N/mm<sup>2</sup>",1e-6)
-appendToResult("<br>Downwind longitudinal stress","σ<sub>z</sub> (downwind)",downwindLongStress,"N/mm<sup>2</sup>",1e-6)
+appendToResult("Downwind longitudinal stress","σ<sub>z</sub> (downwind)",downwindLongStress,"N/mm<sup>2</sup>",1e-6)
+
+appendToResult("<br>Critical buckling stress","σ<sub>c</sub>",critBuckleStress,"N/mm<sup>2</sup>",1e-6)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
