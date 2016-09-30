@@ -54,6 +54,10 @@ var newMeanDiameter = innerDiameter + 2 * (meanThickness + insulationThickness)
 var windLoading = dynamicWindPressure * newMeanDiameter
 var bendingMoment = windLoading/2*height*height
 
+var maxThickness = 18 * 1e-3
+var circPressStress = designPressure*innerDiameter/(2*maxThickness)
+var longPressStress = circPressStress/2
+
 var result = document.createElement("p")
 
 function appendToResult(string,shortString,whatever,unit,modifier){
@@ -72,6 +76,9 @@ appendToResult("Weight of insulation","W<sub>i</sub>",doubledInsulationWeight,"k
 appendToResult("Total weight","W",totalWeight,"kN",1e-3)
 
 appendToResult("<br>Bending moment at bottom tangent line","M<sub>x</sub>",bendingMoment,"Nm",1)
+
+appendToResult("<br>Longitudinal pressure stress","σ<sub>L</sub>",longPressStress,"N/mm<sup>2</sup>",1e-6)
+appendToResult("Circumferential pressure stress","σ<sub>h</sub>",circPressStress,"N/mm<sup>2</sup>",1e-6)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
