@@ -26,5 +26,4 @@ createInput("Joint efficiency","jointEfficiency",1,"")
 createInput("<br>Fitting factor","fittingFactor",1.15,"")
 createInput("Average thickness","avgThick",14,"mm")
 
-createInput("<br>Number of plates","numberPlates",100,"")
 createInput("<br>Insulation density","insulationDensity",130,"kg/m<sup>3</sup>")
