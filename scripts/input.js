@@ -10,7 +10,7 @@ function createInput(frontString,idString,value,backString){
 	inputText.setAttribute("value",value)
 	line.appendChild(inputText)
 	
-	line.innerHTML += " " + backString + "<br>"
+	line.innerHTML += " " + backString
 }
 
 createInput("Height, between tangent lines","height",50,"m")
