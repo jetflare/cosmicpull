@@ -15,8 +15,19 @@ var thickness2 = thickNumer/thickDenom2
 var minThickness = Math.max(thickness1,thickness2)
 // display minThickness in mm: minThickness*1e3
 
-var result1 = document.createElement("p")
-result1.innerHTML=minThickness
-var meh = document.getElementById("resultList")
-meh.appendChild(result1)
+var result = document.createElement("p")
+
+function appendToResult(string,shortString,whatever,unit,modifier){
+	var placeholder = whatever
+	if (whatever.isNaN == false){
+		placeholder *= modifier
+	}
+	result.innerHTML += string + ", " + shortString + ": " + placeholder + " " + unit
+}
+
+appendToResult("Minimum thickness","t",minThickness,"mm")
+
+function showResult(){
+	document.getElementById("resultList").appendChild(result)
+}
 
