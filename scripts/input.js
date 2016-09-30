@@ -11,6 +11,7 @@ function createInput(frontString,idString,value,backString){
 	line.appendChild(inputText)
 	
 	line.innerHTML += " " + backString
+	line.style.marginTop = "0px"
 }
 
 createInput("Height, between tangent lines","height",50,"m")
