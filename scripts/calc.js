@@ -17,5 +17,6 @@ var minThickness = Math.max(thickness1,thickness2)
 
 var result1 = document.createElement("p")
 result1.innerHTML=minThickness
-document.getElementById(resultList).appendChild(result1)
+var meh = document.getElementById(resultList)
+meh.appendChild(result1)
 
