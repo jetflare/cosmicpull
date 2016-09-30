@@ -16,7 +16,7 @@ var minThickness = Math.max(thickness1,thickness2)
 // display minThickness in mm: minThickness*1e3
 
 var result1 = document.createElement("p")
-result1.innerHTML=atmPressure
-var meh = document.getElementById(inputList)
+result1.innerHTML=minThickness
+var meh = document.getElementById("resultList")
 meh.appendChild(result1)
 
