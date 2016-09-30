@@ -7,6 +7,7 @@ function appendToResult(string,shortString,whatever,unit,modifier){
 	var placeholder = whatever
 	if (isNaN(whatever) == false){
 		placeholder *=  modifier
+		placeholder = placeholder.toPrecision(5)
 	}
 	result.innerHTML += string + ", " + shortString + ": " + placeholder + " " + unit + "<br>"
 }
