@@ -41,10 +41,11 @@ var plateWeight = plateArea * 1.2 * 1e3
 var totalPlateWeight = plateWeight * nPlates
 totalWeight += totalPlateWeight
 
+var gravityConstant = 9.81
 var insulationDensity = 130 * 1
 var insulationThickness = 75 * 1e-3
 var insulationVolume = innerDiameter*height*insulationThickness*Math.PI/4
-var insulationWeight = insulationVolume * insulationDensity
+var insulationWeight = insulationVolume * insulationDensity * gravityConstant
 var doubledInsulationWeight = 2 * insulationWeight
 totalWeight += doubledInsulationWeight
 
