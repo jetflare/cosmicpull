@@ -15,6 +15,12 @@ var thickness2 = thickNumer/thickDenom2
 var minThickness = Math.max(thickness1,thickness2)
 // display minThickness in mm: minThickness*1e3
 
+var fittingFactor = 1.15
+var meanThickness = 14 * 1e-3
+var meanDiameter = innerDiameter + meanThickness
+var height = document.getElementById("height").value
+var vesselWeight = 240*fittingFactor*meanDiameter*(height+.8*meanDiameter)*meanThickness
+
 var result = document.createElement("p")
 
 function appendToResult(string,shortString,whatever,unit,modifier){
@@ -22,10 +28,11 @@ function appendToResult(string,shortString,whatever,unit,modifier){
 	if (isNaN(whatever) == false){
 		placeholder *=  modifier
 	}
-	result.innerHTML += string + ", " + shortString + ": " + placeholder + " " + unit
+	result.innerHTML += string + ", " + shortString + ": " + placeholder + " " + unit + "<br>"
 }
 
 appendToResult("Minimum thickness","t",minThickness,"mm",1e3)
+appendToResult("Dead weight of vessel","W<sub>v<sub>",vesselWeight,"kN",1e-3)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
