@@ -5,11 +5,12 @@ function createInput(frontString,idString,value,backString){
 	
 	var inputText = document.createElement("input")
 	inputText.setAttribute("type","text")
+	inputText.setAttribute("class","inputText")
 	inputText.setAttribute("id",idString)
 	inputText.setAttribute("value",value)
 	line.appendChild(inputText)
 	
-	line.innerHTML += backString + "<br>"
+	line.innerHTML += " " + backString + "<br>"
 }
 
 createInput("Height, between tangent lines","height",50,"m")
