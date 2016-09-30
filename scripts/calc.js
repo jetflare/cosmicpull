@@ -62,6 +62,7 @@ var deadWeightStress = totalWeight/(Math.PI*maxThickness*(innerDiameter + maxThi
 
 var outerDiameter = innerDiameter + 2 * maxThickness
 var secondMomentOfArea = Math.PI/64*(Math.pow(outerDiameter,4) - Math.pow(innerDiameter,4))
+var bendingStress = bendingMoment/secondMomentOfArea*(innerDiameter/2+maxThickness)
 
 var result = document.createElement("p")
 
