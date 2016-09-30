@@ -54,7 +54,7 @@ var newMeanDiameter = innerDiameter + 2 * (meanThickness + insulationThickness)
 var windLoading = dynamicWindPressure * newMeanDiameter
 var bendingMoment = windLoading/2*height*height
 
-var maxThickness = 18 * 1e-3
+var maxThickness = document.getElementById("maxThick").value * 1e-3
 var circPressStress = designPressure*innerDiameter/(2*maxThickness)
 var longPressStress = circPressStress/2
 
