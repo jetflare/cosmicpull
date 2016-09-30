@@ -1,12 +1,12 @@
-var getTableButton = document.createElement("button")
-getTableButton.setAttribute("onclick","getTable()")
-getTableButton.innerHTML="Show Table"
-document.getElementById("buttonList").appendChild(getTableButton)
-
 var getInputButton = document.createElement("button")
 getInputButton.setAttribute("onclick","getInput()")
 getInputButton.innerHTML="Input List"
 document.getElementById("buttonList").appendChild(getInputButton)
+
+var getTableButton = document.createElement("button")
+getTableButton.setAttribute("onclick","getTable()")
+getTableButton.innerHTML="Show Table"
+document.getElementById("buttonList").appendChild(getTableButton)
 
 var clearPageButton = document.createElement("button")
 clearPageButton.setAttribute("onclick","clearPage()")
