@@ -49,7 +49,7 @@ var insulationWeight = insulationVolume * insulationDensity * gravityConstant
 var doubledInsulationWeight = 2 * insulationWeight
 totalWeight += doubledInsulationWeight
 
-var dynamicWindPressure = 1280
+var dynamicWindPressure = document.getElementById("windPress").value * 1
 var newMeanDiameter = innerDiameter + 2 * (meanThickness + insulationThickness)
 var windLoading = dynamicWindPressure * newMeanDiameter
 var bendingMoment = windLoading/2*height*height
