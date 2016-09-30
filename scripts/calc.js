@@ -4,7 +4,7 @@ var designPressure = (operatingPressureAbs - atmPressure) * 1.1
 
 var innerDiameter = document.getElementById("diameter").value * 1 // m
 var maxAllowStress = document.getElementById("maxStress").value * 1e3 * 1e3 // (convert from N/mm^2 to Pa)
-var jointEfficiency = document.getElementById("jointEfficiency").value;
+var jointEfficiency = document.getElementById("jointEfficiency").value * 1;
 
 var thickNumer = designPressure*innerDiameter
 var thickDenom1 = 2*maxAllowStress*jointEfficiency-1.2*designPressure
@@ -15,10 +15,10 @@ var thickness2 = thickNumer/thickDenom2
 var minThickness = Math.max(thickness1,thickness2)
 // display minThickness in mm: minThickness*1e3
 
-var fittingFactor = 1.15
+var fittingFactor = 1.15 * 1
 var meanThickness = 14 * 1e-3
 var meanDiameter = innerDiameter + meanThickness
-var height = document.getElementById("height").value
+var height = document.getElementById("height").value * 1
 var vesselWeight = 240*fittingFactor*meanDiameter*(height+.8*meanDiameter)*meanThickness
 
 var result = document.createElement("p")
