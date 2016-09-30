@@ -2,7 +2,7 @@ var line = document.createElement("p")
 document.getElementById("inputList").appendChild(line)
 
 function createInput(frontString,idString,value,backString){
-	line.innerHTML = frontString + ": "
+	line.innerHTML += frontString + ": "
 	
 	var inputText = document.createElement("input")
 	inputText.setAttribute("type","text")
