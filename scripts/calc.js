@@ -35,15 +35,15 @@ var plainLadderWeight = plainLadderLength * 150
 var totalPlainLadderWeight = plainLadderWeight * nPlainLadder
 totalWeight += totalPlainLadderWeight
 
-var nPlates = 100 * 1
+var nPlates = document.getElementById("plateNumber").value * 1
 var plateArea = innerDiameter*innerDiameter*Math.PI/4
 var plateWeight = plateArea * 1.2 * 1e3
 var totalPlateWeight = plateWeight * nPlates
 totalWeight += totalPlateWeight
 
 var gravityConstant = 9.81
-var insulationDensity = 130 * 1
-var insulationThickness = 75 * 1e-3
+var insulationDensity = document.getElementById("insulationDensity").value * 1
+var insulationThickness = document.getElementById("insulationThickness").value * 1e-3
 var insulationVolume = innerDiameter*height*insulationThickness*Math.PI
 var insulationWeight = insulationVolume * insulationDensity * gravityConstant
 var doubledInsulationWeight = 2 * insulationWeight
