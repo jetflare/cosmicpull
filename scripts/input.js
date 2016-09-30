@@ -27,3 +27,5 @@ createInput("<br>Fitting factor","fittingFactor",1.15,"")
 createInput("Average thickness","avgThick",14,"mm")
 
 createInput("<br>Insulation density","insulationDensity",130,"kg/m<sup>3</sup>")
+
+createInput("<br>Dynamic wind pressure","windPress",1280,"N/m")
