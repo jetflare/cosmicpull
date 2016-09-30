@@ -27,7 +27,7 @@ function appendToResult(string,shortString,whatever,unit,modifier){
 
 appendToResult("Minimum thickness","t",minThickness,"mm")
 
-function showResult(){
+//function showResult(){
 	document.getElementById("resultList").appendChild(result)
-}
+//}
 
