@@ -34,7 +34,7 @@ function appendToResult(string,shortString,whatever,unit,modifier){
 appendToResult("Minimum thickness","t",minThickness,"mm",1e3)
 //appendToResult("Dead weight of vessel","W<sub>v</sub>",vesselWeight,"kN",1e-3)
 
-appendToResult("Mean diameter","D<sub>m</sub>",innerDiameter,"m",1)
+appendToResult("Mean diameter","D<sub>m</sub>",meanDiameter,"m",1)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
