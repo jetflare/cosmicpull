@@ -31,7 +31,7 @@ totalWeight += totalCagedLadderWeight
 
 var nPlainLadder = 0 * 1
 var plainLadderLength = 10 * 1
-var plainLadderWeight = planLadderLength * 150
+var plainLadderWeight = plainLadderLength * 150
 var totalPlainLadderWeight = plainLadderWeight * nPlainLadder
 totalWeight += totalPlainLadderWeight
 
