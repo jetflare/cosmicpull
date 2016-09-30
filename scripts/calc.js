@@ -2,7 +2,7 @@ var atmPressure = 101325 // Pa
 var operatingPressureAbs = document.getElementById("operatingPressure").value * 1e2 * 1e3 ; //bar (convert bar to Pa)
 var designPressure = (operatingPressureAbs - atmPressure) * 1.1
 
-var innerDiameter = document.getElementById("diameter").value // m
+var innerDiameter = document.getElementById("diameter").value * 1 // m
 var maxAllowStress = document.getElementById("maxStress").value * 1e3 * 1e3 // (convert from N/mm^2 to Pa)
 var jointEfficiency = document.getElementById("jointEfficiency").value;
 
