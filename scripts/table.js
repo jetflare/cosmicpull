@@ -156,6 +156,8 @@ appendToTableType1(dataSheet,section5Specs,section5Units)
 var section6Specs = ["material for construction of shell","material for construction of demister pad"]
 appendToTableType3(dataSheet,section6Specs)
 
+function getTable(){
+
 document.getElementById('dataSheetTable').appendChild(dataSheet)
 
 document.getElementById('blank1').innerHTML="D13"//"D13"
@@ -187,3 +189,5 @@ document.getElementById('blank26').innerHTML="D46"//"D46"
 document.getElementById('blank27').innerHTML="D47"//"D47"
 document.getElementById('blank28').innerHTML="D48"//"D48"
 document.getElementById('blank29').innerHTML="D49"//"D49"
+
+}
