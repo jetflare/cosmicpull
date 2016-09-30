@@ -19,8 +19,8 @@ var result = document.createElement("p")
 
 function appendToResult(string,shortString,whatever,unit,modifier){
 	var placeholder = whatever
-	if (whatever.isNaN == false){
-		placeholder *= modifier
+	if (isNaN(whatever) == false){
+		placeholder *=  modifier
 	}
 	result.innerHTML += string + ", " + shortString + ": " + placeholder + " " + unit
 }
