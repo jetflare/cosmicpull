@@ -14,3 +14,11 @@ function createInput(frontString,idString,value,backString){
 }
 
 createInput("Height, between tangent lines","height",50,"m")
+createInput("Diameter","diameter",2,"m")
+createInput("Skirt support height","supportHeight",3,"m")
+createInput("Number of plates","plateNumber",100,"")
+createInput("Insulation thickness","insulationThickness",75,"mm")
+createInput("Design temperature","desginTemperature",200,"°C")
+createInput("Maximum allowable stress","maxStress",135,"N/mm<sup>2</sup>")
+createInput("Operating pressure","operatingPressure",10,"bar (absolute)")
+createInput("Joint efficiency","jointEfficiency",1,"")
