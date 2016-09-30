@@ -44,7 +44,7 @@ totalWeight += totalPlateWeight
 var gravityConstant = 9.81
 var insulationDensity = 130 * 1
 var insulationThickness = 75 * 1e-3
-var insulationVolume = innerDiameter*height*insulationThickness*Math.PI/4
+var insulationVolume = innerDiameter*height*insulationThickness*Math.PI
 var insulationWeight = insulationVolume * insulationDensity * gravityConstant
 var doubledInsulationWeight = 2 * insulationWeight
 totalWeight += doubledInsulationWeight
@@ -62,9 +62,9 @@ function appendToResult(string,shortString,whatever,unit,modifier){
 appendToResult("Minimum thickness","t",minThickness,"mm",1e3)
 appendToResult("Dead weight of vessel","W<sub>v</sub>",vesselWeight,"kN",1e-3)
 appendToResult("Weight of plates","W<sub>p</sub>",totalPlateWeight,"kN",1e-3)
-appendToResult("Volume of insulation","V<sub>i</sub>",insulationVolume,"m<sup>3</sup>",1)
+//appendToResult("Volume of insulation","V<sub>i</sub>",insulationVolume,"m<sup>3</sup>",1)
 appendToResult("Weight of insulation","W<sub>i</sub>",doubledInsulationWeight,"kN",1e-3)
-//appendToResult("Total weight","W",totalWeight,"kN",1e-3)
+appendToResult("Total weight","W",totalWeight,"kN",1e-3)
 
 //function showResult(){
 	document.getElementById("resultList").appendChild(result)
