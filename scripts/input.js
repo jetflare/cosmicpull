@@ -32,3 +32,8 @@ createInput("<br>Insulation density","insulationDensity",130,"kg/m<sup>3</sup>")
 createInput("<br>Dynamic wind pressure","windPress",1280,"N/m")
 
 createInput("<br>Maximum thickness","maxThick",18,"mm")
+
+var calcButton = document.createElement("button")
+calcButton.innerHTML="Submit"
+calcButton.setAttribute("onclick","calculateResult()")
+document.getElementById("inputList").appendChild(calcButton)
