@@ -58,7 +58,7 @@ var maxThickness = document.getElementById("maxThick").value * 1e-3
 var circPressStress = designPressure*innerDiameter/(2*maxThickness)
 var longPressStress = circPressStress/2
 
-var deadWeightStress = totalWeight/(Math.PI*maxThickness*(innerDiameter + thickness))
+var deadWeightStress = totalWeight/(Math.PI*maxThickness*(innerDiameter + maxThickness))
 
 var outerDiameter = innerDiameter + 2 * maxThickness
 var secondMomentOfArea = Math.PI/64*(Math.pow(outerDiameter,4)+Math.pow(innerDiameter,4))
