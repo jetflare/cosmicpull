@@ -36,3 +36,7 @@ th, td {
 .centerData {
     text-align:center;
 }
+
+.inputText {
+  width: 100px;
+}
