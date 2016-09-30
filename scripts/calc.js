@@ -15,8 +15,8 @@ var thickness2 = thickNumer/thickDenom2
 var minThickness = Math.max(thickness1,thickness2)
 // display minThickness in mm: minThickness*1e3
 
-var fittingFactor = 1.15 * 1
-var meanThickness = 14 * 1e-3
+var fittingFactor = document.getElementById("fittingFactor").value * 1
+var meanThickness = document.getElementById("avgThick").value * 1e-3
 var meanDiameter = innerDiameter + meanThickness
 var height = document.getElementById("height").value * 1
 var vesselWeight = 240*fittingFactor*meanDiameter*(height+.8*meanDiameter)*meanThickness*1e3
