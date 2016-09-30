@@ -22,3 +22,7 @@ createInput("Design temperature","desginTemperature",200,"°C")
 createInput("Maximum allowable stress","maxStress",135,"N/mm<sup>2</sup>")
 createInput("Operating pressure","operatingPressure",10,"bar (absolute)")
 createInput("Joint efficiency","jointEfficiency",1,"")
+
+createInput("<br>Fitting factor","fittingFactor",1.15,"")
+createInput("Average thickness","avgThick",14,"mm")
+//createInput("","",,"")
