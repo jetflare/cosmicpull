@@ -50,7 +50,7 @@ var doubledInsulationWeight = 2 * insulationWeight
 totalWeight += doubledInsulationWeight
 
 var dynamicWindPressure = 1280
-var newMeanDiameter = innerDiamter + 2 * (meanThickness + insulationThickness)
+var newMeanDiameter = innerDiameter + 2 * (meanThickness + insulationThickness)
 var windLoading = dynamicWindPressure * newMeanDiameter
 var bendingMoment = windLoading/2*height*height
 
