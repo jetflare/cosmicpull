@@ -1,0 +1,25 @@
+clc
+clear
+
+R=10; % crown radius
+a=.4; % knuckle radius
+h=.8; % distance from dome base to dome top
+% Only works if 0<c<R-a; see c below; too complicated to rearrange
+
+% Do not touch any line below
+c=sqrt((R-a)^2-(R-h)^2);
+
+validity=a+c;
+Ra=R-a;
+Rh=R-h;
+% Should work if and only if R-a > R-h > 0
+
+Vterm1=2*h*R^2;
+Vterm2=(R-h)*(2*a^2+c^2+2*a*R);
+Vterm3=3*a^2*c*asin((R-h)/(R-a));
+
+if validity<R && imag(validity)==0
+    Vdome=pi*(Vterm1+Vterm2+Vterm3)/3
+else
+    disp 'invalid parameters'
+end
